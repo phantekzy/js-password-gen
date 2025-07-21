@@ -1,0 +1,149 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ========== GLOBAL STYLES ========== */
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Title Styling */
+.title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  color: black;
+}
+
+/* Body Layout + Background Animation */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ff0099, #493240, #00c3ff, #1c1c1c);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+/* Background Animation Keyframes */
+@keyframes gradientBG {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.container .title {
+  font-size: 4rem;
+}
+
+/* ========== INPUT & BUTTONS ========== */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* Input Box Layout */
+.input-box {
+  position: relative;
+  width: 100%;
+}
+
+/* Input Field */
+.input-box input {
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  background: black;
+  text-align: center;
+  transition: transform 2s ease, box-shadow 2s ease;
+}
+
+/* Copy Button (inside input) */
+#copy-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #FFF;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Generate Button */
+#gen-btn {
+  width: 60%;
+  height: 40px;
+  margin: 20px;
+  text-align: center;
+  background: black;
+  color: #FFF;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 11px;
+  transition: transform 2s ease;
+}
+
+/* Hover Effect for Buttons */
+.input-wrapper button:hover {
+  transform: scale(1.2);
+}
+
+/* Font Awesome Icon Padding */
+.input-wrapper i {
+  padding: 0 5px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 580px) {
+  .container .title {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .input-box {
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+  }
+
+  .input-box input {
+    max-width: 180px;
+    height: 50px;
+  }
+
+  #gen-btn {
+    width: 30%;
+    height: 30px;
+    margin: 10px;
+    font-size: 11px;
+  }
+
+  #copy-btn {
+    right: 65px;
+    font-size: 1rem;
+  }
+}
+
